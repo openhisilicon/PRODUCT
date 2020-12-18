@@ -49,20 +49,35 @@
     初始化环境变量,启动bsp.exe,codec.exe,svp.exe,...
 
 #### FAQ
-* 如何测试WIFI
-    系统默认使用用线网口,如需要测试wifi请进行以下操作:
+* **如何测试WIFI**
+    系统默认使用用线网口,如需要测试wifi请进行以下操作(wifi密码文件/app/wifi/wpa.conf):
     * mv /app/startapp.sh /app/startapp.sh.bak
     * reboot
     * /app/wifi/wifi.sh
     * /app/startapp.sh.bak
-* 如何编译app程序
+* **如何编译app程序**
     * 下载源代码 https://github.com/openhisilicon/HIVIEW
     * 设置编译环境 source build/3516d
     * 编译代码 make
     * 制作网络升级包 ./ins.sh 16d
     * 设备升级 使用Google Chrome 打开设备 http://192.168.0.2 在页面最下方 Upload file
-    
-* 烧录文件下载
+
+* **如何使用FLASH的剩余空间**
+    * 当前MTD分区 uboot:1M,kernel:4M,rootfs:120M,user:387M(未使用)
+    * 如果要使用user分区,请进行如下操作:
+    * 1 格式化UBI分区(只需要执行一次此操作):
+      *  ubiformat /dev/mtd3
+      *  ubiattach /dev/ubi_ctrl -m 3
+      *  ubinfo /dev/ubi1
+      *  ubimkvol /dev/ubi1 -N user -s xxxMiB 
+        (xxx 来源于ubinfo命令输出可用的空间大小, 
+        如果输入错误可删除卷: ubirmvol /dev/ubi1 -N user)
+      *  mount -t ubifs /dev/ubi1_0 /mnt/ 
+    * 2 挂载UBI分区(每次上电都需要执行挂载):
+      *  ubiattach /dev/ubi_ctrl -m 3
+      *  mount -t ubifs /dev/ubi1_0 /mnt/
+   
+* **烧录文件下载**
   链接：https://pan.baidu.com/s/1GH7AbrUrEHT12cW83srevw 提取码：x2nc 
-* 海思SDK下载
+* **海思SDK下载**
   链接：https://pan.baidu.com/s/1Z3DFCY-12PX5luIVQfzwiA 提取码：1j64 

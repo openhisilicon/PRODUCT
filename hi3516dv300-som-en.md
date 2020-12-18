@@ -48,20 +48,34 @@
     Initialize the environment variables, start the bsp.exe,codec.exe,svp.exe,...
 
 #### FAQ
-* Open WIFI
-  The system uses the cable network port by default. If you need to test WIFI, please do the following:
+* **How do open WIFI**
+  The system uses the cable network port by default. If you need to test WIFI, please do the following(wifi password file: /app/wifi/wpa.conf):
     * mv /app/startapp.sh /app/startapp.sh.bak
     * reboot
     * /app/wifi/wifi.sh
     * /app/startapp.sh.bak
-* Compile APP
+* **How do compile APP**
     * Download the source code: https://github.com/openhisilicon/HIVIEW
     * Set environment: source build/3516d
     * Compile: make
     * Make upgrade file: ./ins.sh 16d
     * Upload upgrade file: Use Google Chrome to open  http://192.168.0.2 and  Upload File at “Upload file using Ajax”
     
-* Burn files
+* **How do use the left space in FLASH**
+  * current uboot MTD partitions: uboot:1M,  kernel: 4M, rootfs: 120M, user: 387M (not use)
+  * To use a user partition, do the following:
+  * 1 Format the UBI partition (do this only once):
+      *  ubiformat /dev/mtd3
+      *  ubiattach /dev/ubi_ctrl -m 3
+      *  ubinfo /dev/ubi1
+      *  ubimkvol /dev/ubi1 -N user -s xxxMiB 
+         (xxx from the ubinfo command output available space size,
+        delete the volume if you type incorrectly:  ubirmvol /dev/ubi1 -N user)
+      *  mount -t ubifs /dev/ubi1_0 /mnt/ 
+    * 2 mount UBI partition (mount is required every  powered on):
+      *  ubiattach /dev/ubi_ctrl -m 3
+      *  mount -t ubifs /dev/ubi1_0 /mnt/
+* **Burn files**
     link：https://pan.baidu.com/s/1GH7AbrUrEHT12cW83srevw code：x2nc 
-* SDK files
+* **SDK files**
     link：https://pan.baidu.com/s/1Z3DFCY-12PX5luIVQfzwiA code：1j64 
