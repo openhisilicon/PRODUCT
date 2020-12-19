@@ -75,6 +75,26 @@
     * 2 mount UBI partition (mount is required every  powered on):
       *  ubiattach /dev/ubi_ctrl -m 3
       *  mount -t ubifs /dev/ubi1_0 /mnt/
+  
+* **How do switch IR-CUT**
+  * IR-CUT is GPIO3-3 and GPIO3-4, which is controlled by the kernel standard GPIO interface:
+  * Create GPIO node:
+    * echo 27 > /sys/class/gpio/export
+    * echo 28 > /sys/class/gpio/export
+    * echo low > /sys/class/gpio/gpio27/direction
+    * echo low > /sys/class/gpio/gpio28/direction
+  *  Set GPIO value: 
+        * `echo 0 > /sys/class/gpio/gpio27/value;echo 1 > /sys/class/gpio/gpio28/value;sleep 0.1;echo 0 > /sys/class/gpio/gpio28/value`
+        * `echo 1 > /sys/class/gpio/gpio27/value;echo 0 > /sys/class/gpio/gpio28/value;sleep 0.1;echo 0 > /sys/class/gpio/gpio27/value`
+
+* **How do open MIPI-DSI**
+    * modify mod/codec/ipc/codec.c:mipi_800x1280 = 1;
+      recompile the codec module and copy codec.exe file to /app/bin/codec.exe;
+    * MIPI-DSI reset pin is GPIO0-5 and can be reset at before running codec.exe:
+        * echo 5 > /sys/class/gpio/export
+        * echo out > /sys/class/gpio/gpio5/direction
+        * `echo 0 > /sys/class/gpio/gpio5/value;sleep 0.5;echo 1 > /sys/class/gpio/gpio5/value`
+
 * **Burn files**
     link：https://pan.baidu.com/s/1GH7AbrUrEHT12cW83srevw code：x2nc 
 * **SDK files**

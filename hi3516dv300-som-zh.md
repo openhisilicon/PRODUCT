@@ -76,7 +76,25 @@
     * 2 挂载UBI分区(每次上电都需要执行挂载):
       *  ubiattach /dev/ubi_ctrl -m 3
       *  mount -t ubifs /dev/ubi1_0 /mnt/
-   
+
+* **如何切换 IR-CUT**
+    *  IR-CUT对应的GPIO为 GPIO3-3,GPIO3-4, 使用内核标准GPIO操作接口控制:
+    *  创建GPIO操作节点:
+        * echo 27 > /sys/class/gpio/export
+        * echo 28 > /sys/class/gpio/export
+        * echo low > /sys/class/gpio/gpio27/direction
+        * echo low > /sys/class/gpio/gpio28/direction
+    *  控制GPIO电平: 
+        * `echo 0 > /sys/class/gpio/gpio27/value;echo 1 > /sys/class/gpio/gpio28/value;sleep 0.1;echo 0 > /sys/class/gpio/gpio28/value`
+        * `echo 1 > /sys/class/gpio/gpio27/value;echo 0 > /sys/class/gpio/gpio28/value;sleep 0.1;echo 0 > /sys/class/gpio/gpio27/value`
+
+* **如何测试MIPI-DSI屏幕**
+    * 修改mod/codec/ipc/codec.c:mipi_800x1280 = 1,
+      重新编译codec模块,并更新codec.exe文件到/app/bin/codec.exe;
+    * MIPI-DSI复位引脚为GPIO0-5, 可在运行codec.exe之前任意时刻执行复位操作:
+        * echo 5 > /sys/class/gpio/export
+        * echo out > /sys/class/gpio/gpio5/direction
+        * `echo 0 > /sys/class/gpio/gpio5/value;sleep 0.5;echo 1 > /sys/class/gpio/gpio5/value`
 * **烧录文件下载**
   链接：https://pan.baidu.com/s/1GH7AbrUrEHT12cW83srevw 提取码：x2nc 
 * **海思SDK下载**
