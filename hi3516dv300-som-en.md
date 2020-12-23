@@ -1,5 +1,6 @@
 
 # Hi3516DV300-SOM-BaseBoard
+**Author: thomas@hiview-tech.cn**
 
 ## Hi3516DV300
 

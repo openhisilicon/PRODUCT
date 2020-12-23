@@ -1,5 +1,6 @@
 
 # Hi3559V200核心板与底板
+**作者: thomas@hiview-tech.cn**
 
 ## Hi3559V200参数
 

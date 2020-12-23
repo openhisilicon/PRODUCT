@@ -1,5 +1,6 @@
 
-# Hi3559V200-SOM-BaseBoard
+# Hi3559V200-SOM-BaseBoard 
+**Author: thomas@hiview-tech.cn**
 
 ## Hi3559V200
 
