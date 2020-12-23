@@ -108,6 +108,10 @@
       * flash_erase /dev/mtd1 0 0
       * nandwrite -p /dev/mtd1 uImage-uhost
 
+* **如何使用USB烧写**
+    * 请参考 /ReleaseDoc/zh/01.software/pc/HiTool/HiBurn 工具使用指南.pdf [1.5 环境准备]
+    * 注: 上电时切换update-key为低电平, 如果WIN10无法找到设备,请使用WIN7进行测试
+
 * **烧录文件下载**
   链接：https://pan.baidu.com/s/1PqE6LV7dluT1TruEtoMRKA 提取码：qg2y 
 * **海思SDK下载**

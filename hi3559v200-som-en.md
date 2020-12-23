@@ -107,6 +107,10 @@
       * flash_erase /dev/mtd1 0 0
       * nandwrite -p /dev/mtd1 uImage-uhost
 
+* **How do USB-BURN**
+    * Please reference /ReleaseDoc/en/01.software/pc/HiTool/HiBurn User Guide.pdf [1.5 Environment Preparation]
+    * Note: Switch update-key to low level when powering on. If WIN10 cannot find the device, please use WIN7
+
 * **Burn files**
     link：https://pan.baidu.com/s/1PqE6LV7dluT1TruEtoMRKA code：qg2y 
 * **SDK files**
