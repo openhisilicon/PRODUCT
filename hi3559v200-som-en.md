@@ -57,9 +57,9 @@
     * /app/startapp.sh.bak
 * **How do compile APP**
     * Download the source code: https://github.com/openhisilicon/HIVIEW
-    * Set environment: source build/3516d
+    * Set environment: source build/3559
     * Compile: make
-    * Make upgrade file: ./ins.sh 16d
+    * Make upgrade file: ./ins.sh 59
     * Upload upgrade file: Use Google Chrome to open  http://192.168.0.2 and  Upload File at “Upload file using Ajax”
     
 * **How do use the left space in FLASH**
