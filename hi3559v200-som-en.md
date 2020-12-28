@@ -113,6 +113,6 @@
     * Note: Switch update-key to low level when powering on. If WIN10 cannot find the device, please use WIN7
 
 * **Burn files**
-    link：https://pan.baidu.com/s/1PqE6LV7dluT1TruEtoMRKA code：qg2y 
+    link：https://pan.baidu.com/s/1k525rZtWp54Xfu4Ie1C1rA code：drf7 
 * **SDK files**
-    link：https://pan.baidu.com/s/1DDdzR1LzHvNPqJT-2h1m_w code：1j64 
+    link：[`Please contact us for download`] 

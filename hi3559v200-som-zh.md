@@ -114,7 +114,7 @@
     * 注: 上电时切换update-key为低电平, 如果WIN10无法找到设备,请使用WIN7进行测试
 
 * **烧录文件下载**
-  链接：https://pan.baidu.com/s/1PqE6LV7dluT1TruEtoMRKA 提取码：qg2y 
+  链接：https://pan.baidu.com/s/1k525rZtWp54Xfu4Ie1C1rA 提取码：drf7 
 * **海思SDK下载**
-  链接：https://pan.baidu.com/s/1DDdzR1LzHvNPqJT-2h1m_w 提取码：qg2y 
+  链接：[`请联系我们获取下载方式`] 
 

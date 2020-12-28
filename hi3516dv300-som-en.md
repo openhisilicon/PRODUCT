@@ -97,6 +97,7 @@
         * `echo 0 > /sys/class/gpio/gpio5/value;sleep 0.5;echo 1 > /sys/class/gpio/gpio5/value`
 
 * **Burn files**
-    link：https://pan.baidu.com/s/1GH7AbrUrEHT12cW83srevw code：x2nc 
+    link：https://pan.baidu.com/s/1GqM2OvlGFG9rshOoWS-I7Q code：3ln1 
 * **SDK files**
-    link：https://pan.baidu.com/s/1Z3DFCY-12PX5luIVQfzwiA code：1j64 
+    link：[`Please contact us for download`] 
+

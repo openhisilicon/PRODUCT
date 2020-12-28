@@ -97,6 +97,6 @@
         * echo out > /sys/class/gpio/gpio5/direction
         * `echo 0 > /sys/class/gpio/gpio5/value;sleep 0.5;echo 1 > /sys/class/gpio/gpio5/value`
 * **烧录文件下载**
-  链接：https://pan.baidu.com/s/1GH7AbrUrEHT12cW83srevw 提取码：x2nc 
+  链接：https://pan.baidu.com/s/1GqM2OvlGFG9rshOoWS-I7Q 提取码：3ln1 
 * **海思SDK下载**
-  链接：https://pan.baidu.com/s/1Z3DFCY-12PX5luIVQfzwiA 提取码：1j64 
+  链接：[`请联系我们获取下载方式`]
