@@ -5,7 +5,7 @@
 ## Hi3516DV300
 
 * 1, Dual-core ARM A7-900;
-* 2, 5M@30FPS venc/vdec;
+* 2, 4M@30FPS venc/vdec;
 * 3, MIPI-CSI 4L/2Lx2 input;
 * 4, MIPI-DSI 4L/LCD/HDMI output;
 * 5, 1Tops Neural network acceleration engine;

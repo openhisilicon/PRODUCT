@@ -5,7 +5,7 @@
 ## Hi3516DV300参数
 
 * 1, 双核A7-900;
-* 2, 5M@30FPS编码/解码;
+* 2, 4M@30FPS编码/解码;
 * 3, MIPI-CSI 4L/2Lx2输入;
 * 4, MIPI-DSI 4L/LCD/HDMI输出;
 * 5, 1Tops NNIE神经网络加速器;
