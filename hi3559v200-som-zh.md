@@ -90,8 +90,7 @@
         * `echo 1 > /sys/class/gpio/gpio27/value;echo 0 > /sys/class/gpio/gpio28/value;sleep 0.1;echo 0 > /sys/class/gpio/gpio27/value`
 
 * **如何测试MIPI-DSI屏幕**
-    * 修改mod/codec/ipc/codec.c:mipi_800x1280 = 1,
-      重新编译codec模块,并更新codec.exe文件到/app/bin/codec.exe;
+    * 打开或关闭mipi输出: touch /app/mipi or rm /app/mipi;
     * MIPI-DSI复位引脚为GPIO0-5, 可在运行codec.exe之前任意时刻执行复位操作:
         * echo 5 > /sys/class/gpio/export
         * echo out > /sys/class/gpio/gpio5/direction

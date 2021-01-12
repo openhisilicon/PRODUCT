@@ -89,8 +89,7 @@
         * `echo 1 > /sys/class/gpio/gpio27/value;echo 0 > /sys/class/gpio/gpio28/value;sleep 0.1;echo 0 > /sys/class/gpio/gpio27/value`
 
 * **How do open MIPI-DSI**
-    * modify mod/codec/ipc/codec.c:mipi_800x1280 = 1;
-      recompile the codec module and copy codec.exe file to /app/bin/codec.exe;
+    * Turn on or off the MIPI output: touch /app/mipi or rm /app/mipi;
     * MIPI-DSI reset pin is GPIO0-5 and can be reset at before running codec.exe:
         * echo 5 > /sys/class/gpio/export
         * echo out > /sys/class/gpio/gpio5/direction
