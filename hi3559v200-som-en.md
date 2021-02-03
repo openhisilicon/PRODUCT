@@ -30,6 +30,7 @@
 
 
 #### serial console
+* J10 slot
 * Baud rate -115200
 * Data bit -8
 * Parity - none
