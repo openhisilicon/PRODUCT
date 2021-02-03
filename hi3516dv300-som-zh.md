@@ -22,6 +22,10 @@
 * 2, RTL8189FTV-WIFI, MIPI-CSI, MIPI-DSI;
 * 3, KEY,LED,GPIO,UART1,RS485,AUDIO-IN-OUT;
 
+## 核心板与底板规格书
+  https://github.com/openhisilicon/PRODUCT/blob/master/HI3516DV300_SOM%20datasheet_C.pdf
+
+
 ## 快速使用指南
 
 
@@ -50,8 +54,8 @@
     初始化环境变量,启动bsp.exe,codec.exe,svp.exe,...
 
 #### FAQ
-* **如何测试WIFI**
-    系统默认使用用线网口,如需要测试wifi请进行以下操作(wifi密码文件/app/wifi/wpa.conf):
+* **如何测试WIFI-STA**
+    系统默认使用用线网口,如需要测试wifi-sta请进行以下操作(wifi密码文件/app/wifi/wpa.conf):
     * mv /app/startapp.sh /app/startapp.sh.bak
     * reboot
     * /app/wifi/wifi.sh
@@ -80,21 +84,37 @@
 
 * **如何切换 IR-CUT**
     *  IR-CUT对应的GPIO为 GPIO3-3,GPIO3-4, 使用内核标准GPIO操作接口控制:
-    *  创建GPIO操作节点:
+    *  创建GPIO操作节点(在新的软件中已增加到/factory/startup.sh):
         * echo 27 > /sys/class/gpio/export
         * echo 28 > /sys/class/gpio/export
         * echo low > /sys/class/gpio/gpio27/direction
         * echo low > /sys/class/gpio/gpio28/direction
-    *  控制GPIO电平: 
-        * `echo 0 > /sys/class/gpio/gpio27/value;echo 1 > /sys/class/gpio/gpio28/value;sleep 0.1;echo 0 > /sys/class/gpio/gpio28/value`
-        * `echo 1 > /sys/class/gpio/gpio27/value;echo 0 > /sys/class/gpio/gpio28/value;sleep 0.1;echo 0 > /sys/class/gpio/gpio27/value`
+    *  IRCUT切换:
+        * Day:  `echo 1 > /sys/class/gpio/gpio27/value;echo 0 > /sys/class/gpio/gpio28/value;sleep 0.1;echo 0 > /sys/class/gpio/gpio27/value`
+        * Night:`echo 0 > /sys/class/gpio/gpio27/value;echo 1 > /sys/class/gpio/gpio28/value;sleep 0.1;echo 0 > /sys/class/gpio/gpio28/value`
+    *  IMX334-IRCUT切换:
+        * Day:  `echo 1 > /sys/class/gpio/gpio27/value;echo 1 > /sys/class/gpio/gpio28/value`
+        * Night:`echo 0 > /sys/class/gpio/gpio27/value;echo 0 > /sys/class/gpio/gpio28/value`
 
 * **如何测试MIPI-DSI屏幕**
-    * 打开或关闭mipi输出: touch /app/mipi or rm /app/mipi;
-    * MIPI-DSI复位引脚为GPIO0-5, 可在运行codec.exe之前任意时刻执行复位操作:
+    * 打开或关闭mipi输出标识: touch /app/mipi or rm /app/mipi;
+      (注: 旧的软件版本需要修改mod/src/ipc/codec.c:int mipi_800x1280 = 0/1, 并更新codec.exe到板端)
+    * MIPI-DSI复位引脚为GPIO0-5, 请按照以下命令操作:
+        * mv /app/startapp.sh /app/startapp.sh.bak
+        * reboot
         * echo 5 > /sys/class/gpio/export
         * echo out > /sys/class/gpio/gpio5/direction
         * `echo 0 > /sys/class/gpio/gpio5/value;sleep 0.5;echo 1 > /sys/class/gpio/gpio5/value`
+        * /app/startapp.sh.bak
+  
+* **如何使用USB烧写**
+    * 请参考 /ReleaseDoc/zh/01.software/pc/HiTool/HiBurn 工具使用指南.pdf [1.5 环境准备]
+    * 注: 上电前切换update-key为GND, 如果WIN10无法找到设备,请使用WIN7进行测试
+
+* **如何使用ETH烧写**
+    * 请参考 /ReleaseDoc/zh/01.software/pc/HiTool/HiBurn 工具使用指南.pdf
+    * 注: 上电前切换update-key为UPDATE.
+  
 * **烧录文件下载**
   链接：https://pan.baidu.com/s/1GqM2OvlGFG9rshOoWS-I7Q 提取码：3ln1 
 * **海思SDK下载**
