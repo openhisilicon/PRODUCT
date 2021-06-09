@@ -40,7 +40,7 @@
 #### Terminal of network
 * Default IP of the board: 192.168.0.2
 * Telnet default username -root, password - none
-
+* Note: New firmware Telnet/SSH username -root, password - hiview
 
 #### startup script
 

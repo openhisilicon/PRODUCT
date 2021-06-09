@@ -41,7 +41,7 @@
 
 * 板子默认IP: 192.168.0.2
 * telnet默认用户名-root, 密码-无 
-
+* 注意: 新的固件Telnet/SSH用户名-root，密码- hiview
 
 #### 启动脚本
 
