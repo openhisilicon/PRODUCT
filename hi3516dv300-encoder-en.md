@@ -12,7 +12,6 @@
 
 ## Quick Use Guide
 
-
 #### serial console
 * J10 slot
 * Baud rate -115200
