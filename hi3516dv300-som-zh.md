@@ -54,7 +54,7 @@
 * /app/startapp.sh
     初始化环境变量,启动bsp.exe,codec.exe,svp.exe,...
 
-#### FAQ
+#### FAQ(有些功能已在web页面可控制)
 * **如何测试WIFI-STA**
     系统默认使用用线网口,如需要测试wifi-sta请进行以下操作(wifi密码文件/app/wifi/wpa.conf):
     * mv /app/startapp.sh /app/startapp.sh.bak

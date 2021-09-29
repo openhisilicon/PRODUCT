@@ -53,7 +53,7 @@
 * /app/startapp.sh
     Initialize the environment variables, start the bsp.exe,codec.exe,svp.exe,...
 
-#### FAQ
+#### FAQ(Some functions are already on the Web page)
 * **How do open WIFI-STA**
   The system uses the cable network port by default. If you need to test WIFI-STA, please do the following(wifi password file: /app/wifi/wpa.conf):
     * mv /app/startapp.sh /app/startapp.sh.bak
