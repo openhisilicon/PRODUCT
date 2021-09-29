@@ -112,6 +112,21 @@
     * 请参考 /ReleaseDoc/zh/01.software/pc/HiTool/HiBurn 工具使用指南.pdf [1.5 环境准备]
     * 注: 上电前切换update-key为GND, 如果WIN10无法找到设备,请使用WIN7进行测试
 
+
+* **关于WIN10下无法使用USB烧录的问题**
+    * win10下hitool手动控制usb烧录
+    * (update-key保持在"update"即串口升级模式)
+
+        * 1, 打开hitool, 选择CPU类型;
+        * 2, 配置hitool, 选择串口烧录方式, 仅烧录boot分区;
+        * 3, 配置hitool, 选择usb烧录方式, 选择除boot外的其他分区;
+        * 4, 进入uboot输入 "usb device"
+        * 5, 点击 "烧写", 当看到hitool提示如下时, 复位板子,再次在uboot输入 "usb device"; 
+        `# ---- 100% `
+        `Boot download completed!`
+        * 6, 等待烧录完成;
+
+
 * **如何使用ETH烧写**
     * 请参考 /ReleaseDoc/zh/01.software/pc/HiTool/HiBurn 工具使用指南.pdf
     * 注: 上电前切换update-key为UPDATE.

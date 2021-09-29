@@ -112,6 +112,21 @@
     * Please reference /ReleaseDoc/en/01.software/pc/HiTool/HiBurn User Guide.pdf [1.5 Environment Preparation]
     * Note: Switch update-key to GND when powering on. If WIN10 cannot find the device, please use WIN7
 
+
+* **WIN10 can not use USB burning problem**
+    * In Win10, Hitool manually controls USB burning
+    * (Keep update-key in "Update" mode, i.e. serial port upgrade mode)
+
+        * 1, Open Hitool and select a CPU type;
+        * 2, Configure Hitool, select serial port burning mode, only burn boot partition;
+        * 3, Configure Hitool, select usb burning mode, and select other partitions except boot;
+        * 4, Enter "usb device" in uboot;
+        * 5, Click "Burn". When you see the following message from Hitool, reset the board, enter "usb device" again in uboot;
+        `# ---- 100% `
+        `Boot download completed!`
+        * 6, Wait for the completion of burning;
+
+
 * **How do ETH-BURN**
     * Please reference /ReleaseDoc/en/01.software/pc/HiTool/HiBurn User Guide.pdf
     * Note: Switch update-key to UPDATE when powering on.
