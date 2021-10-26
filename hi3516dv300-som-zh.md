@@ -133,5 +133,4 @@
   
 * **烧录文件下载**
   链接：https://pan.baidu.com/s/1GqM2OvlGFG9rshOoWS-I7Q 提取码：3ln1 
-* **海思SDK下载**
-  链接：[`请联系我们获取下载方式`]
+

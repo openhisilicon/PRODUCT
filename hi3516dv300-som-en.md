@@ -133,6 +133,5 @@
 
 * **Burn files**
     link：https://pan.baidu.com/s/1GqM2OvlGFG9rshOoWS-I7Q code：3ln1 
-* **SDK files**
-    link：[`Please contact us for download`] 
+
 

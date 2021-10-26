@@ -140,6 +140,5 @@
 
 * **烧录文件下载**
   链接：https://pan.baidu.com/s/1k525rZtWp54Xfu4Ie1C1rA 提取码：drf7 
-* **海思SDK下载**
-  链接：[`请联系我们获取下载方式`] 
+
 

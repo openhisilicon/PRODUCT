@@ -144,5 +144,4 @@
 
 * **Burn files**
     link：https://pan.baidu.com/s/1k525rZtWp54Xfu4Ie1C1rA code：drf7 
-* **SDK files**
-    link：[`Please contact us for download`] 
+
