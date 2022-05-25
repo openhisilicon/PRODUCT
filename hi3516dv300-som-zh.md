@@ -40,8 +40,7 @@
 #### 网口终端
 
 * 板子默认IP: 192.168.0.2
-* telnet默认用户名-root, 密码-无 
-* 注意: 新的固件Telnet/SSH用户名-root，密码- hiview
+* Telnet/SSH用户名: root，密码: hiview
 
 #### 启动脚本
 
@@ -54,14 +53,9 @@
 * /app/startapp.sh
     初始化环境变量,启动bsp.exe,codec.exe,svp.exe,...
 
-#### FAQ(有些功能已在web页面可控制)
-* **如何测试WIFI-STA**
-    系统默认使用用线网口,如需要测试wifi-sta请进行以下操作(wifi密码文件/app/wifi/wpa.conf):
-    * mv /app/startapp.sh /app/startapp.sh.bak
-    * reboot
-    * /app/wifi/wifi.sh
-    * /app/startapp.sh.bak
-* **如何编译app程序**
+#### FAQ
+
+* **如何编译app程序** (https://www.bilibili.com/video/BV1rU4y1771Z)
     * 下载源代码 https://github.com/openhisilicon/HIVIEW
     * 设置编译环境 source build/3516d
     * 编译代码 make
@@ -83,31 +77,6 @@
       *  ubiattach /dev/ubi_ctrl -m 3
       *  mount -t ubifs /dev/ubi1_0 /mnt/
 
-* **如何切换 IR-CUT**
-    *  IR-CUT对应的GPIO为 GPIO3-3,GPIO3-4, 使用内核标准GPIO操作接口控制:
-    *  创建GPIO操作节点(在新的软件中已增加到/factory/startup.sh):
-        * echo 27 > /sys/class/gpio/export
-        * echo 28 > /sys/class/gpio/export
-        * echo low > /sys/class/gpio/gpio27/direction
-        * echo low > /sys/class/gpio/gpio28/direction
-    *  IRCUT切换:
-        * Day:  `echo 1 > /sys/class/gpio/gpio27/value;echo 0 > /sys/class/gpio/gpio28/value;sleep 0.1;echo 0 > /sys/class/gpio/gpio27/value`
-        * Night:`echo 0 > /sys/class/gpio/gpio27/value;echo 1 > /sys/class/gpio/gpio28/value;sleep 0.1;echo 0 > /sys/class/gpio/gpio28/value`
-    *  IMX334-IRCUT切换:
-        * Day:  `echo 1 > /sys/class/gpio/gpio27/value;echo 1 > /sys/class/gpio/gpio28/value`
-        * Night:`echo 0 > /sys/class/gpio/gpio27/value;echo 0 > /sys/class/gpio/gpio28/value`
-
-* **如何测试MIPI-DSI屏幕**
-    * 打开或关闭mipi输出标识: touch /app/mipi or rm /app/mipi;
-      (注: 旧的软件版本需要修改mod/src/ipc/codec.c:int mipi_800x1280 = 0/1, 并更新codec.exe到板端)
-    * MIPI-DSI复位引脚为GPIO0-5, 请按照以下命令操作:
-        * mv /app/startapp.sh /app/startapp.sh.bak
-        * reboot
-        * echo 5 > /sys/class/gpio/export
-        * echo out > /sys/class/gpio/gpio5/direction
-        * `echo 0 > /sys/class/gpio/gpio5/value;sleep 0.5;echo 1 > /sys/class/gpio/gpio5/value`
-        * /app/startapp.sh.bak
-  
 * **如何使用USB烧写**
     * 请参考 /ReleaseDoc/zh/01.software/pc/HiTool/HiBurn 工具使用指南.pdf [1.5 环境准备]
     * 注: 上电前切换update-key为GND, 如果WIN10无法找到设备,请使用WIN7进行测试
